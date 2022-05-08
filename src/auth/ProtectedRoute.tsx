@@ -13,12 +13,10 @@ export type ProtectedRouteProps = {
 
 const ProtectedRoute = ({ component, ...args }: ProtectedRouteProps) => {
     return (
-
         <Route {...args} component={withAuthenticationRequired(component, {
-                onRedirecting: () => <Loading />
-            })}
+            onRedirecting: () => <Loading />
+        })}
         >
-            
         </Route>
     )
 }
