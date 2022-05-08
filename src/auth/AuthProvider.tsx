@@ -1,7 +1,7 @@
 import { AppState, Auth0Provider } from "@auth0/auth0-react"
 import { PropsWithChildren } from "react"
 import envV from "config/index"
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export interface AuthProps {
     name: string,
@@ -10,9 +10,9 @@ export interface AuthProps {
 
 
 const AuthProvider = ({ children, ...rest }: PropsWithChildren<{}>) => {
-    const history = useNavigate();
+    const history = useHistory();
     const onRedirectCallback = (appState: AppState | undefined) => {
-        history(appState?.returnTo || window.location.pathname)
+        history.push(appState?.returnTo || window.location.pathname)
     };
     return (
         <Auth0Provider
