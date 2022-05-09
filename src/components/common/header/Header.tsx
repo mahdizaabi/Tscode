@@ -18,7 +18,7 @@ const StyledLink = styled(Link)(({ theme }) => ({
 const Header = () => {
     const { isAuthenticated } = useAuth0();
     return (
-        <AppBar position="relative">
+        <AppBar >
             <Toolbar>
                 <Typography variant="h6" sx={{ flex: 1 }}>
                     <StyledLink to={paths.home}> Code editor App</StyledLink>
