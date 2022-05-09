@@ -5,18 +5,21 @@ import Header from '../header/Header'
 
 
 const LayoutContainer = styled('div')({
-    height: '100%',
+    height: '100vh',
+    width: '100%',
     display: 'flex',
-    flexDirection: 'column',
+    backgroundColor: 'whitesmoke'
 })
 
 const Page = styled('div')({
-    height: '100%'
+    width: '100%',
+    paddingTop: '80px'
+
 })
 const Layout = (props: PropsWithChildren<{}>) => {
     return (
         <LayoutContainer>
-            <Header></Header>
+            <Header />
             <Page>
                 {props.children}
             </Page>
