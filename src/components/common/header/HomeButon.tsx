@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 
 
 const SignButtonStyled = styled(Button)(({ theme }) => ({
-    color: theme.commonColors.black,
+    color: theme.commonColors.white,
     backgroundColor: 'red'
 }));
 
@@ -19,7 +19,7 @@ const HomeButton = () => {
     const history = useHistory();
     const onClick = () => history.push(paths.codeEditor)
     return (
-        <SignButtonStyled onClick={onClick}></SignButtonStyled>
+        <SignButtonStyled onClick={onClick}>CODE EDITOR</SignButtonStyled>
     )
 }
 

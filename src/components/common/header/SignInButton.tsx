@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles"
 import paths from "routes/path";
 
 const SignButtonStyled = styled(Button)(({ theme }) => ({
-    color: theme.commonColors.black,
+    color: theme.commonColors.white,
     backgroundColor: 'red'
 }));
 
