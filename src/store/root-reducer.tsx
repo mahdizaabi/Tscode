@@ -1,7 +1,7 @@
-import { combineReducers } from "@reduxjs/toolkit";
 
-import { darkModeReducer } from "./slices/dark-mode/darkMode";
+import { combineReducers } from '@reduxjs/toolkit';
+import darkModeReducer from './slices/dark-mode/darkMode';
 
 
-export const combinedReducers = combineReducers({ darkModeReducer })
+export const combinedReducers = combineReducers(combineReducers{ darkModeReducer })
 
