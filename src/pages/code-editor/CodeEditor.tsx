@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { Dispatch, useReducer } from 'react'
 import { useDispatch } from 'react-redux'
 
 
@@ -20,12 +20,17 @@ export type getAction = "get"
 // }
 
 
+export type actionX = {
+    name: string,
+    age: number,
+    type:string
+}
+
 
 const CodeEditor = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<Dispatch<actionX>>()
 
-    const onClick = () => dispatch({'rr':1414})
     return (
         <div>
             <h1>Hello World !!!</h1>
