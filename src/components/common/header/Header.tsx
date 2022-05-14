@@ -8,6 +8,7 @@ import HomeButton from './HomeButon'
 import { useAuth0 } from '@auth0/auth0-react'
 import SigninButton from './SignInButton'
 import SignOutButton from './SIgnOutButton'
+import SwitchButton from './SwitchButton'
 
 
 const StyledLink = styled(Link)(({ theme }) => ({
@@ -23,6 +24,7 @@ const Header = () => {
                 <Typography variant="h6" sx={{ flex: 1 }}>
                     <StyledLink to={paths.home}> Code editor App</StyledLink>
                 </Typography>
+                <SwitchButton></SwitchButton>
                 {isAuthenticated ? <AuthenticatedButtons /> : <UnauthenticatedButtons />}
             </Toolbar>
         </AppBar >
