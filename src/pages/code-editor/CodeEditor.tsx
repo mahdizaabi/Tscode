@@ -1,5 +1,7 @@
-import React, { Dispatch, useReducer } from 'react'
+import React, { Dispatch, useContext, useReducer } from 'react'
 import { useDispatch } from 'react-redux'
+import { toggleDarkMode } from 'store/slices/dark-mode/darkMode'
+import { useAppDispatch } from 'store/typedHooks'
 
 
 export type ActionType = 'DELETE' | ' GET' | 'POST'
@@ -23,13 +25,20 @@ export type getAction = "get"
 export type actionX = {
     name: string,
     age: number,
-    type:string
+    type: string
 }
 
 
 const CodeEditor = () => {
 
-    const dispatch = useDispatch<Dispatch<actionX>>()
+    const dispatcher = useAppDispatch();
+    let x = toggleDarkMode();
+
+
+    dispatcher({
+        type: ".", 
+        b: "d"
+    })
 
     return (
         <div>

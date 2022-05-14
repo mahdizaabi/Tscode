@@ -6,18 +6,14 @@ const darkModeSlice = createSlice({
     initialState,
     name: 'darkMode',
     reducers: {
-        toggleDarkMode(state) {
+        toggleDarkMode(state: boolean) {
             return !state;
-        },
-        ActionX(state) {
-            return !state
         }
-    }
+    },
 })
 
-
+//toggle dark mode is an action creator that produce an action when invoked;
 export const { toggleDarkMode } = darkModeSlice.actions;
-// export const { ActionX } = darkModeSlice.actions;
 
 export const darkModeReducer = darkModeSlice.reducer;
 
