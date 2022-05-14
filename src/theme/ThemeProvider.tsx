@@ -1,6 +1,9 @@
 import Context from '@mui/base/TabsUnstyled/TabsContext'
 import { createTheme, ThemeProvider } from '@mui/material'
 import React, { PropsWithChildren } from 'react'
+import { useSelector } from 'react-redux';
+import { useAppSelector } from 'store/typedHooks';
+import { RootState } from 'types/Store';
 import { commonColors, darkColors, lightColors } from './colors';
 
 
@@ -32,17 +35,18 @@ declare module '@mui/material/styles' {
 
 
 const ThemeProviderComponent = (props: PropsWithChildren<{}>) => {
-    const darkMode = false;
+    const darkModeState = useAppSelector((state) => state.darkMode)
+    //const darkMode = false;
     const theme = createTheme({
         palette: {
-            mode: darkMode ? 'dark' : 'light',
+            mode: darkModeState ? 'dark' : 'light',
             primary: {
                 main: commonColors.primary
             },
 
         },
-        background: darkMode ? darkColors.background : lightColors.background,
-        font: darkMode ? darkColors.font : lightColors.font,
+        background: darkModeState ? darkColors.background : lightColors.background,
+        font: darkModeState ? darkColors.font : lightColors.font,
         commonColors
     })
 
